@@ -1,3 +1,5 @@
-export function test() {
-  const a = 'dsf'
+export function gummy() {
+  const a = 'ola'
+
+  return a
 }

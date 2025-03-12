@@ -7,6 +7,9 @@ const config: Config = {
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coverageProvider: 'v8',
+  transform: {
+    '.+\\.ts$': 'ts-jest',
+  },
 
   // Indicates whether the coverage information should be collected while executing the test
   // An array of glob patterns indicating a set of files for which coverage information should be collected
