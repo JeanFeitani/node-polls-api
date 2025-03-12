@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1741802402199" clover="3.2.0">
+  <project timestamp="1741802402200" name="All files">
+    <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0" elements="5" coveredelements="0" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
+    <file name="arquivo.ts" path="C:\Users\Jean\codebase\node-polls-api\src\arquivo.ts">
+      <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>

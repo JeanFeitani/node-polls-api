@@ -13,7 +13,6 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   prettierConfig,
-
   {
     plugins: { prettier: eslintPlugin },
     rules: {
