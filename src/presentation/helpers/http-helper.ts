@@ -1,14 +1,14 @@
 import { ServerError } from '../errors'
 import type { HttpResponse } from '../protocols/http'
 
-export function BadRequest(error: Error): HttpResponse {
+export function badRequest(error: Error): HttpResponse {
   return {
     statusCode: 400,
     body: error,
   }
 }
 
-export function InternalServerError(): HttpResponse {
+export function serverError(): HttpResponse {
   return {
     statusCode: 500,
     body: new ServerError(),
