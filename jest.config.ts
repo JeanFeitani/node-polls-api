@@ -7,6 +7,10 @@ const config: Config = {
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coverageProvider: 'v8',
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/src/presentation/protocols/',
+  ],
   transform: {
     '.+\\.ts$': 'ts-jest',
   },

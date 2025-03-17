@@ -6,7 +6,7 @@ import eslintPlugin from 'eslint-plugin-prettier'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ['node_modules', 'dist'] },
+  { ignores: ['node_modules', 'dist', 'coverage'] },
   { files: ['**/*.{js,mjs,cjs,ts}'] },
   { files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' } },
   { languageOptions: { globals: globals.node } },
@@ -19,6 +19,7 @@ export default [
       'prettier/prettier': 'error',
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-require-imports': 'off',
     },
   },
 ]
