@@ -6,10 +6,10 @@
   "scripts": {
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
-    "test:unit": "npm test -- --watch -c jest-unit-config.js",
-    "test:integration": "npm test -- --watch -c jest-integration-config.js",
-    "test:staged": "npm test -- --findRelatedTests",
-    "test:ci": "npm test -- --coverage",
+    "test:unit": "npm run test -- --watch --testMatch \"**/*.spec.ts\"",
+    "test:integration": "npm run test -- --watch --testMatch \"**/*.test.ts\"",
+    "test:staged": "jest --findRelatedTests",
+    "test:ci": "jest --coverage",
     "prepare": "husky"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "@eslint/js": "9.22.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.13.10",
+    "@types/validator": "13.12.2",
     "eslint": "9.22.0",
     "eslint-config-prettier": "10.1.1",
     "eslint-plugin-prettier": "5.2.3",
@@ -32,5 +33,8 @@
     "ts-node": "10.9.2",
     "typescript": "5.8.2",
     "typescript-eslint": "8.26.1"
+  },
+  "dependencies": {
+    "validator": "13.12.0"
   }
 }
