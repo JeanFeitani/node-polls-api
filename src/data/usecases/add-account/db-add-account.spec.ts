@@ -92,7 +92,7 @@ describe('Db Add Account', () => {
     })
   })
 
-  it('Should throw if Encrypter throws', async () => {
+  it('Should throw if AddAccountResitory throws', async () => {
     const { addAccountRepositoryStub, sut } = makeSut()
     jest
       .spyOn(addAccountRepositoryStub, 'add')
@@ -107,5 +107,25 @@ describe('Db Add Account', () => {
     const promise = sut.add(accoundData)
 
     await expect(promise).rejects.toThrow()
+  })
+
+  it('Should return an account on succes', async () => {
+    const { sut } = makeSut()
+
+    const accoundData = {
+      id: 'valid_id',
+      name: 'valid_name',
+      email: 'valid_email',
+      password: 'valid_password',
+    }
+
+    const account = await sut.add(accoundData)
+
+    expect(account).toEqual({
+      id: 'valid_id',
+      name: 'valid_name',
+      email: 'valid_email',
+      password: 'hashed_password',
+    })
   })
 })
