@@ -5,7 +5,13 @@ const config: Config = {
   clearMocks: true,
   collectCoverage: false,
   coverageDirectory: 'coverage',
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.ts',
+    '!src/**/index.ts',
+    '!src/**/models/**', // Ignora arquivos dentro de qualquer pasta chamada "models"
+    '!src/**/protocols/**', // Ignora arquivos dentro de qualquer pasta chamada "protocols"
+    '!src/**/*protocols*.ts', // Ignora arquivos que tenham "protocols" no nome
+  ],
   coverageProvider: 'v8',
   coveragePathIgnorePatterns: [
     '/node_modules/',
