@@ -15,7 +15,7 @@
     "types": [
       "node",
       "jest",
-      "@types/bcrypt"
+      "@types/bcrypt",
     ],
   },
 }
