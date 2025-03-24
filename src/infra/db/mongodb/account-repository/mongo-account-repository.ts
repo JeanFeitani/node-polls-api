@@ -7,20 +7,17 @@ export class MongoAccountRepository implements AddAccountRepository {
   async add(accountData: AddAccountModel): Promise<AccountModel> {
     const accountCollection = MongoHelper.getCollection('accounts')
 
-    // Inserir os dados no MongoDB
     const result = await accountCollection.insertOne(accountData)
 
-    // Buscar o documento recém-inserido pelo _id
-    const account = await accountCollection.findOne({ _id: result.insertedId })
+    const account: any = await accountCollection.findOne({
+      _id: result.insertedId,
+    })
 
-    if (!account) throw new Error('Account not found')
-
-    // Retornar o documento encontrado com os campos exigidos pelo AccountModel
-    return {
-      id: account._id.toString(),
-      name: account.name,
-      email: account.email,
-      password: account.password,
+    if (!account) {
+      throw new Error('Falha ao criar a conta')
     }
+
+    const { _id, ...rest } = account
+    return { id: _id.toString(), ...rest }
   }
 }
