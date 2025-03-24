@@ -9,8 +9,19 @@ describe('MongoDb', () => {
     await MongoHelper.disconnect()
   })
 
-  it('Should return account on success', async () => {
+  const makeSut = () => {
     const sut = new MongoAccountRepository()
+
+    return { sut }
+  }
+
+  beforeEach(async () => {
+    const accountCollection = MongoHelper.getCollection('accounts')
+    await accountCollection.deleteMany({})
+  })
+
+  it('Should return account on success', async () => {
+    const { sut } = makeSut()
 
     const account = await sut.add({
       name: 'any_name',
