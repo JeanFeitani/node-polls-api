@@ -1,10 +1,12 @@
-export const mongoConfig = {
+module.exports = {
+  preset: '@shelf/jest-mongodb',
+  globalSetup: './path/to/globalSetup.js',
   mongodbMemoryServerOptions: {
-    binary: {
-      version: '4.0.3',
-      skipMD5: true,
+    instance: {
+      dbName: 'testdb',
     },
-    autoStart: false,
-    instance: {},
+    binary: {
+      version: '4.0.3', // Specify MongoDB version
+    },
   },
 }
