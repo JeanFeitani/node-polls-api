@@ -10,6 +10,8 @@
     "test:integration": "npm run test -- --watch --testMatch \"**/*.test.ts\"",
     "test:staged": "jest --findRelatedTests",
     "test:ci": "jest --coverage",
+
+    
     "dev": "tsx watch src/main/server.ts",
     "prepare": "husky"
   },

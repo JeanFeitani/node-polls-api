@@ -1,6 +1,4 @@
-import { fastify } from 'fastify'
-
-export const app = fastify()
+import { app } from './config/app'
 
 app
   .listen({
@@ -10,7 +8,3 @@ app
   .then(() => {
     console.log('🚀 HTTP server running')
   })
-
-app.post('/test', async (request, reply) => {
-  return request.body
-})
