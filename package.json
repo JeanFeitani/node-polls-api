@@ -10,8 +10,6 @@
     "test:integration": "npm run test -- --watch --testMatch \"**/*.test.ts\"",
     "test:staged": "jest --findRelatedTests",
     "test:ci": "jest --coverage",
-
-    
     "dev": "tsx watch src/main/server.ts",
     "prepare": "husky"
   },
@@ -44,6 +42,7 @@
     "typescript-eslint": "8.26.1"
   },
   "dependencies": {
+    "@fastify/cors": "11.0.1",
     "bcrypt": "5.1.1",
     "fastify": "5.2.1",
     "mongodb": "6.15.0",
