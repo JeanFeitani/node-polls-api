@@ -1,10 +1,8 @@
 import Fastify from 'fastify'
-import { contentTypeMiddleware } from '../middlewares/content-type'
-import { cors } from '../middlewares/cors'
-import { routes } from './routes'
+import { router } from './routes'
+import { middlewares } from './middlewares'
 
 export const app = Fastify()
-app.register(routes)
 
-app.addHook('onRequest', cors)
-app.addHook('onSend', contentTypeMiddleware)
+router(app)
+middlewares(app)

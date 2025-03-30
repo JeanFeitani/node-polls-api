@@ -1,11 +1,8 @@
-import { FastifyInstance } from 'fastify'
+import type { FastifyInstance } from 'fastify'
+import { routes } from '../routes/testing'
+import { signUpRoutes } from '../routes/signup-routes'
 
-export const routes = (app: FastifyInstance) => {
-  app.get('/test_cors', async (_, reply) => {
-    reply.send({ message: 'CORS test' })
-  })
-
-  app.get('/', async (request, reply) => {
-    return { message: 'Hello, app!' }
-  })
+export const router = async (app: FastifyInstance) => {
+  app.register(routes)
+  app.register(signUpRoutes, { prefix: '/api' })
 }

@@ -3,15 +3,15 @@ import { app } from './config/app'
 
 describe('Main', () => {
   beforeAll(async () => {
-    await app.ready() // ⬅ Garante que o Fastify esteja pronto antes do teste
+    await app.ready()
   })
 
   afterAll(async () => {
-    await app.close() // ⬅ Fecha o servidor corretamente após os testes
+    await app.close()
   })
 
   it.skip('Server should respond correctly', async () => {
-    const response = await request(app.server) // ⬅ Usa `app.server` corretamente
+    const response = await request(app.server)
       .post('/test')
       .send({ name: 'Jean Feitani' })
 
