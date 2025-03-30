@@ -10,9 +10,9 @@ describe('Main', () => {
     await app.close()
   })
 
-  it.skip('Server should respond correctly', async () => {
+  it('Server should respond correctly', async () => {
     const response = await request(app.server)
-      .post('/test')
+      .post('/')
       .send({ name: 'Jean Feitani' })
 
     expect(response.status).toBe(200)

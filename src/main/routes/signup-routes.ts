@@ -1,7 +1,7 @@
 import type { FastifyInstance } from 'fastify'
+import { makeSignUpController } from '../factories/signup'
+import { fastifyAdpter } from './adapters/fastify-routes-adapter'
 
 export const signUpRoutes = (app: FastifyInstance) => {
-  app.post('/signup', async (_, reply) => {
-    reply.send({ message: 'ok' })
-  })
+  app.post('/signup', fastifyAdpter(makeSignUpController()))
 }

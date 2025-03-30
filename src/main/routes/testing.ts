@@ -5,7 +5,7 @@ export const routes = (app: FastifyInstance) => {
     reply.send({ message: 'CORS test' })
   })
 
-  app.get('/', async (request, reply) => {
-    return { message: 'Hello, app!' }
+  app.post('/', async (request, reply) => {
+    reply.send(request.body)
   })
 }
