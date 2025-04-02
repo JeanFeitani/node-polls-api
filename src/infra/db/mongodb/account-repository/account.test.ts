@@ -1,7 +1,7 @@
 import { MongoHelper } from '../helpers/mongo-helper'
 import { MongoAccountRepository } from './mongo-account-repository'
 
-describe('MongoDb', () => {
+describe('MongoAddAccount', () => {
   beforeAll(async () => {
     await MongoHelper.connect((globalThis as any).__MONGO_URI__)
   })
